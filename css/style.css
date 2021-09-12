@@ -13,20 +13,40 @@ body {
   border: none;
 }
 .search-box {
-  border: 1px solid rgb(3, 118, 211);
+  border: crimson 1px solid;
   width: 281px;
-  border-radius: 5px;
+  position: relative;
+  height: 48px;
+  border-radius: 16px;
   margin: auto;
   margin-top: 50px;
-  border-right: none;
+  background: white;
+  margin-bottom: 50px;
 }
-
-.search-button {
+/* .search-button {
   padding: 10px 50px;
   border-radius: 25px;
   margin-left: 20px;
+} */
+.search-button {
+  padding: 12px 36px;
+  border-radius: 25px;
+  margin-left: 182px;
+  background: crimson;
+  border: none;
+  color: white;
+  position: absolute;
+  font-size: 18px;
+  font-weight: 700;
+  top: -2px;
+  left: 19px;
 }
-
+.cart-design{
+  background: #ececec75;
+  margin: 10px;
+  border-radius: 15px;
+  
+}
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -1,3 +1,4 @@
+// Store API data
 const loadProducts = () => {
   const data = [{
     "id": 1,
@@ -226,17 +227,18 @@ const loadProducts = () => {
 
 // show all product in UI 
 const showProducts = (products) => {
-  // console.log(products);
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
     const image = product.image;
     const div = document.createElement("div");
-    div.classList.add("product");
+    div.classList.add("product", "cart-design");
     div.innerHTML = `<div class="single-product">
       <div>
     <img class="product-image" src=${image}></img>
       </div>
       <h3>${product.title}</h3>
+      <h5>Rating point: <h3><i class="fas fa-star-half-alt"></i> ${product.rating.rate}</h3>
+       People count : <i class="fas fa-user-check"></i> ${product.rating.count}</h5>
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
@@ -272,12 +274,13 @@ const updatePrice = (id, value) => {
 // set innerText function
 const setInnerText = (id, value) => {
   document.getElementById(id).innerText = value.toFixed(2);
+
 };
 
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
+
   const priceConverted = getInputValue("price");
-  // console.log(priceConverted);
   if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
     setInnerText("total-tax", priceConverted * 0.2);
@@ -294,12 +297,9 @@ const updateTaxAndCharge = () => {
   updateTotal("price", "delivery-charge", "total-tax")
 };
 
-
-
 //grandTotal update function
 const updateTotal = () => {
-
-  let grandTotal = getInputValue("price") + getInputValue("delivery-charge") + getInputValue("total-tax");
+  const grandTotal = getInputValue("price") + getInputValue("delivery-charge") + getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal;
 };
 loadProducts();
