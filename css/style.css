@@ -42,10 +42,13 @@ body {
   left: 19px;
 }
 .cart-design{
-  background: #ececec75;
+  background: #d0c9c975;
   margin: 10px;
   border-radius: 15px;
   
+}
+.fas-design{
+  color: #d9534f;
 }
 #all-products {
   display: grid;
